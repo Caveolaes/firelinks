@@ -39,22 +39,53 @@
           <span>程</span>
         </div>
         <div class="nav_bar_box">
-          <div class="nav_bar_box_item">以太坊工程师</div>
-          <div class="nav_bar_box_item">区块链前端工程师</div>
-          <div class="nav_bar_box_item">区块链前端工程师</div>
-          <div class="nav_bar_box_item">区块链前端工程师</div>
-          <div class="nav_bar_box_item">区块链前端工程师</div>
-          <div class="nav_bar_box_item">区块链前端工程师</div>
-          <div class="nav_bar_box_item">区块链前端工程师</div>
+          <div class="nav_bar_box_item" v-for="(index, item) in 14" :key="item">
+            <div class="text">
+              <router-link :to="`/subject/` + index"> 以太坊工程师 -- {{ index }}</router-link>
+            </div>
+            <el-icon>
+              <ArrowRight />
+            </el-icon>
+            <div class="nav_bar_box_item-detail">
+              <div class="nav_bar_box_item-name">以太坊工程师 -- {{ index }} </div>
+              <div class="nav_bar_box_item-main">
+                <div class="nav_bar_box_item-main-item">
+                  <img src="/src/assets/images/orange1.png" alt="">
+                  <div class="text">学科介绍</div>
+                </div>
+                <div class="nav_bar_box_item-main-item">
+                  <img src="/src/assets/images/orange1.png" alt="">
+                  <div class="text">学科介绍</div>
+                </div>
+                <div class="nav_bar_box_item-main-item">
+                  <img src="/src/assets/images/orange1.png" alt="">
+                  <div class="text">学科介绍</div>
+                </div>
+                <div class="nav_bar_box_item-main-item">
+                  <img src="/src/assets/images/orange1.png" alt="">
+                  <div class="text">学科介绍</div>
+                </div>
+              </div>
+              <div class="nav_bar_box_item-icon">
+                <img src="/src/assets/images/blue5.png" alt="">
+                <div class="text">就业前景</div>
+              </div>
+
+            </div>
+          </div>
+
+
         </div>
       </div>
 
     </div>
   </div>
+  <CourseStandardShow />
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation, Autoplay } from "swiper";
+import CourseStandardShow from "@/components/CourseStandardShow.vue"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -68,7 +99,7 @@ export default {
           Pagination, Navigation, Autoplay
         ],
         autoplay: {
-          delay: 1500,
+          delay: 2000,
           disableOnInteraction: false
         },
         navigation: true,
@@ -93,6 +124,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+    CourseStandardShow
   },
   methods: {
     //初始化swiper
@@ -208,23 +240,119 @@ a {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        justify-items:center;
+        justify-items: center;
         align-content: center;
         align-items: center;
-        flex-wrap:wrap;
+        flex-wrap: wrap;
+
         span {
           width: 100%;
           text-align: center;
           color: #fff;
-          font-weight:bold;
+          font-weight: bold;
         }
       }
 
       .nav_bar_box {
         height: 500px;
-        width: 504px;
+        width: 230px;
         border-radius: 15px;
         background-color: rgba(0, 0, 0, .5);
+        padding: 15px 0;
+
+        .nav_bar_box_item {
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          align-items: center;
+          justify-content: space-between;
+          justify-items: center;
+          height: 34px;
+          color: #fff;
+          font-size: 12px;
+          padding: 0 10px 0 40px;
+
+          &-detail {
+            width: 360px;
+            height: 404px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 30px;
+            position: absolute;
+            left: 230px;
+            top: 0;
+            display: none;
+          }
+
+          &-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #323232;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 16px;
+          }
+
+          &-main {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            &-item {
+              width: 140px;
+              height: 60px;
+              background: #F5F5F8;
+              border-radius: 4px;
+              margin-top: 20px;
+              display: flex;
+              justify-content: space-between;
+              padding: 18px 24px;
+
+              .text {
+                font-size: 14px;
+                font-weight: 400;
+                color: #323232;
+                line-height: 24px;
+              }
+            }
+          }
+
+          &-icon {
+            width: 300px;
+            height: 142px;
+            background: #F5F5F8;
+            border-radius: 4px;
+            margin-top: 20px;
+            padding: 0 62px 0 42px;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+
+            img {
+              width: 120px;
+              height: 98px;
+            }
+
+            .text {
+              font-size: 14px;
+              font-weight: 400;
+              color: #323232;
+              line-height: 20px;
+            }
+          }
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+
+          &:hover>.nav_bar_box_item-detail {
+            display: block;
+          }
+
+          .text {
+            cursor: pointer;
+          }
+        }
       }
     }
   }

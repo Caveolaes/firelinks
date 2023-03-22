@@ -94,6 +94,14 @@
     </div>
     <div class="course_container_box">
       <courseIntroduction/>
+      <courseIntroduction/>
+      <courseIntroduction/>
+      <courseIntroduction/>
+      <courseIntroduction/>
+      <courseIntroduction/>
+      <courseIntroduction/>
+      <courseIntroduction/>
+      <courseIntroduction/>
     </div>
   </div>
 </template>
@@ -383,6 +391,7 @@ a {
 
   img {
     width: 100%;
+    height: 100%;
   }
 
   .text {
@@ -403,6 +412,7 @@ a {
 }
 
 .course_container {
+  background-color: #f9f9f9;
   .text {
     font-size: 32px;
     font-weight: 600;

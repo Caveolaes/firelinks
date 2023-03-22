@@ -55,7 +55,12 @@ html, body {
     display: flex;
     justify-content: center;
   }
+
   .tips{
     margin-left: 15px;
     color: #787878;
   }
+.router-link-active {
+  text-decoration: none;
+  color: white;
+}

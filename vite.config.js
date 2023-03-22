@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     host: "localhost",
-    port: "3011",
+    port: "3000",
     hmr: true,
   },
 });

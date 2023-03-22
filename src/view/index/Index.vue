@@ -4,7 +4,7 @@
       <div class="warp_container">
         <div class="log">
           <div class="img">
-            <img src="../../assets/images/logo.png" alt="" />
+            <img src="../../assets/images/logo.png" alt=""/>
           </div>
           <div class="text">
             <router-link to="/">专注于Web3.0生态教育</router-link>
@@ -21,8 +21,9 @@
     </div>
     <div class="index_swiper">
       <swiper class="swiper_box" :slides-per-view="swiperConfig.slidesPerView" :space-between="0"
-        :navigation="swiperConfig.navigation" :pagination="swiperConfig.pagination" :modules="swiperConfig.modules"
-        :autoplay="swiperConfig.autoplay" @swiper="onSwiper" @slideChange="onSlideChange" :loop="true">
+              :navigation="swiperConfig.navigation" :pagination="swiperConfig.pagination"
+              :modules="swiperConfig.modules"
+              :autoplay="swiperConfig.autoplay" @swiper="onSwiper" @slideChange="onSlideChange" :loop="true">
         <swiper-slide><img src="../../assets/images/banner1.jpg" alt=""></swiper-slide>
         <swiper-slide><img src="../../assets/images/banner2.jpg" alt=""></swiper-slide>
         <swiper-slide><img src="../../assets/images/banner3.jpg" alt=""></swiper-slide>
@@ -44,10 +45,10 @@
               <router-link :to="`/subject/` + index"> 以太坊工程师 -- {{ index }}</router-link>
             </div>
             <el-icon>
-              <ArrowRight />
+              <ArrowRight/>
             </el-icon>
             <div class="nav_bar_box_item-detail">
-              <div class="nav_bar_box_item-name">以太坊工程师 -- {{ index }} </div>
+              <div class="nav_bar_box_item-name">以太坊工程师 -- {{ index }}</div>
               <div class="nav_bar_box_item-main">
                 <div class="nav_bar_box_item-main-item">
                   <img src="/src/assets/images/orange1.png" alt="">
@@ -80,12 +81,29 @@
 
     </div>
   </div>
-  <CourseStandardShow />
+  <CourseStandardShow/>
+  <NewStandardShow/>
+  <BlockchainApplication/>
+  <div class="isolation_belt">
+    <img src="/src/assets/images/plate.png">
+    <div class="text">火链学院——全国区块链教育行业先驱</div>
+  </div>
+  <div class="course_container">
+    <div class="text">
+      火链学院主要课程
+    </div>
+    <div class="course_container_box">
+      <courseIntroduction/>
+    </div>
+  </div>
 </template>
 <script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, Navigation, Autoplay } from "swiper";
+import {Swiper, SwiperSlide} from "swiper/vue";
+import {Pagination, Navigation, Autoplay} from "swiper";
 import CourseStandardShow from "@/components/CourseStandardShow.vue"
+import NewStandardShow from "@/components/NewStandardShow.vue"
+import BlockchainApplication from "@/components/BlockchainApplication.vue";
+import courseIntroduction from "@/components/CourseIntroduction.vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -106,31 +124,34 @@ export default {
         pagination: true,
         slidesPerView: 1,
         spaceBetween: 0,
-        slidesPerView: 'auto',
         loop: true
 
       },
       navbarList: [
-        { title: '以太坊工程师', submenu: [{ title: '学科介绍', icon: 'a.png' }], mainicon: "" },
-        { title: '区块链Go语言工程师', submenu: [{ title: '学科介绍', icon: 'a.png' }], mainicon: "" },
-        { title: '区块链前端工程师', submenu: [{ title: '学科介绍', icon: 'a.png' }], mainicon: "" },
-        { title: 'Rust区块链工程师', submenu: [{ title: '学科介绍', icon: 'a.png' }], mainicon: "" },
-        { title: '区块链UI设计师', submenu: [{ title: '学科介绍', icon: 'a.png' }], mainicon: "" },
-        { title: '区块链测试工程师', submenu: [{ title: '学科介绍', icon: 'a.png' }], mainicon: "" },
-        { title: '区块链运营师', submenu: [{ title: '学科介绍', icon: 'a.png' }], mainicon: "" },
+        {title: '以太坊工程师', submenu: [{title: '学科介绍', icon: 'a.png'}], mainicon: ""},
+        {title: '区块链Go语言工程师', submenu: [{title: '学科介绍', icon: 'a.png'}], mainicon: ""},
+        {title: '区块链前端工程师', submenu: [{title: '学科介绍', icon: 'a.png'}], mainicon: ""},
+        {title: 'Rust区块链工程师', submenu: [{title: '学科介绍', icon: 'a.png'}], mainicon: ""},
+        {title: '区块链UI设计师', submenu: [{title: '学科介绍', icon: 'a.png'}], mainicon: ""},
+        {title: '区块链测试工程师', submenu: [{title: '学科介绍', icon: 'a.png'}], mainicon: ""},
+        {title: '区块链运营师', submenu: [{title: '学科介绍', icon: 'a.png'}], mainicon: ""},
       ]
     };
   },
   components: {
     Swiper,
     SwiperSlide,
-    CourseStandardShow
+    CourseStandardShow,
+    NewStandardShow,
+    BlockchainApplication,
+    courseIntroduction
   },
   methods: {
-    //初始化swiper
-    initSwiper() { },
-    onSwiper() { },
-    onSlideChange() { },
+
+    onSwiper() {
+    },
+    onSlideChange() {
+    },
     //nav跳转
     navHandleClick(path) {
       this.$router.push("/");
@@ -139,10 +160,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.router-link-active {
-  text-decoration: none;
-  color: white;
-}
+
 
 a {
   text-decoration: none;
@@ -345,7 +363,7 @@ a {
             background-color: rgba(255, 255, 255, 0.1);
           }
 
-          &:hover>.nav_bar_box_item-detail {
+          &:hover > .nav_bar_box_item-detail {
             display: block;
           }
 
@@ -355,6 +373,43 @@ a {
         }
       }
     }
+  }
+}
+
+.isolation_belt {
+  position: relative;
+  height: 270px;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  .text {
+    width: 100%;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .course_container_box{
+    margin-top: 46px;
+  }
+}
+
+.course_container {
+  .text {
+    font-size: 32px;
+    font-weight: 600;
+    color: #323232;
+    line-height: 48px;
+    padding-top: 66px;
+    text-align: center;
   }
 }
 </style>

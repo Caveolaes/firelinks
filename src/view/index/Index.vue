@@ -104,6 +104,15 @@
       <courseIntroduction/>
     </div>
   </div>
+  <CourseIdea/>
+  <div class="teacher_show">
+    讲师风采
+  </div>
+  <AssistStudy/>
+  <ProfessionQuestion/>
+  <FacilityEnvironment/>
+  <IndustryInfluence/>
+  <Footer/>
 </template>
 <script>
 import {Swiper, SwiperSlide} from "swiper/vue";
@@ -112,9 +121,16 @@ import CourseStandardShow from "@/components/CourseStandardShow.vue"
 import NewStandardShow from "@/components/NewStandardShow.vue"
 import BlockchainApplication from "@/components/BlockchainApplication.vue";
 import courseIntroduction from "@/components/CourseIntroduction.vue";
+import CourseIdea from "@/components/CourseIdea.vue";
+import AssistStudy from "@/components/AssistStudy.vue";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import ProfessionQuestion from "@/components/ProfessionQuestion.vue";
+import FacilityEnvironment from "@/components/FacilityEnvironment.vue";
+import IndustryInfluence from "@/components/IndustryInfluence.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Index",
@@ -147,12 +163,18 @@ export default {
     };
   },
   components: {
+    Footer,
+    IndustryInfluence,
+    FacilityEnvironment,
+    ProfessionQuestion,
+    AssistStudy,
     Swiper,
     SwiperSlide,
     CourseStandardShow,
     NewStandardShow,
     BlockchainApplication,
-    courseIntroduction
+    courseIntroduction,
+    CourseIdea,
   },
   methods: {
 
@@ -406,13 +428,15 @@ a {
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .course_container_box{
+
+  .course_container_box {
     margin-top: 46px;
   }
 }
 
 .course_container {
   background-color: #f9f9f9;
+
   .text {
     font-size: 32px;
     font-weight: 600;

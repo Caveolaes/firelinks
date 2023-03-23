@@ -4,12 +4,14 @@
       <div class="footer_main">
         <div class="own">
           <div class="logo">
-            <img src="/src/assets/images/footer-logo.png" alt="">
+            <img src="/src/assets/images/footer-logo.png" alt="" />
           </div>
           <div class="own_desc">
             <div class="own_desc_item">电话：13631623746</div>
             <div class="own_desc_item">邮箱：xiaofei@firelinks.cn</div>
-            <div class="own_desc_item">地址：深圳市航城大道U8智造产业园U6栋5楼</div>
+            <div class="own_desc_item">
+              地址：深圳市航城大道U8智造产业园U6栋5楼
+            </div>
           </div>
         </div>
         <div class="relation">
@@ -39,7 +41,7 @@
         </div>
         <div class="server">
           <div class="img">
-            <img src="/src/assets/images/kefu.png" alt="">
+            <img src="/src/assets/images/kefu.png" alt="" />
           </div>
           <div class="text">客服微信号</div>
         </div>
@@ -53,8 +55,8 @@
 
 <script>
 export default {
-  name: "Footer"
-}
+  name: "Footer",
+};
 </script>
 
 <style lang="scss" scoped>
@@ -66,18 +68,82 @@ export default {
   .warp_container {
     .footer_main {
       display: flex;
-      .own{
+      .own {
         width: 280px;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
-        .logo{
+        .logo {
           width: 150px;
           height: 60px;
-          img{
+          img {
             width: 100%;
           }
         }
-        .own_desc{
+        .own_desc {
           margin-top: 30px;
+          &_item {
+            width: 240px;
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 20px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .relation {
+        margin-left: 50px;
+        .relation_we {
+          &_title {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 20px;
+            margin-bottom: 10px;
+          }
+          &_box {
+            width: 640px;
+            font-size: 12px;
+            color: #999;
+            line-height: 20px;
+          }
+        }
+        .relation_link {
+          margin-top: 20px;
+          .relation_we_title {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 20px;
+            margin-bottom: 10px;
+          }
+          .relation_we_box {
+            width: 640px;
+            font-size: 12px;
+            color: #999;
+            line-height: 20px;
+            a {
+              text-decoration: none; /* 如果需要去掉下划线 */
+              display: inline;
+              width: auto;
+              font-size: 12px;
+              color: #999;
+              margin-right: 12px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+      .server {
+        margin-left: 90px;
+        .img {
+          width: 120px;
+          height: 120px;
+          img {
+            width: 100%;
+          }
+        }
+        .text {
+          color: #ffffff;
+          text-align: center;
+          font-size: 12px;
+          margin-top: 12px;
         }
       }
     }

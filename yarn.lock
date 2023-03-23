@@ -63,7 +63,7 @@
   resolved "https://registry.npmmirror.com/@types/web-bluetooth/-/web-bluetooth-0.0.16.tgz#1d12873a8e49567371f2a75fe3e7f7edca6662d8"
   integrity sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==
 
-"@videojs-player/vue@1.x":
+"@videojs-player/vue@1.x", "@videojs-player/vue@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmmirror.com/@videojs-player/vue/-/vue-1.0.0.tgz#df7db677b43b2d9b6872e71cd0eb2238cc19a8fd"
   integrity sha512-WonTezRfKu3fYdQLt/ta+nuKH6gMZUv8l40Jke/j4Lae7IqeO/+lLAmBnh3ni88bwR+vkFXIlZ2Ci7VKInIYJg==

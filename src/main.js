@@ -8,8 +8,8 @@ import engine from "./api/engine";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 
-// //swiper样式加载
-// import 'swiper/css'
+import VueVideoPlayer from '@videojs-player/vue'
+import 'video.js/dist/video-js.css'
 
 const app = createApp(App);
 //原型挂载
@@ -19,6 +19,7 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
+app.use(VueVideoPlayer)
 app.use(router);
 app.use(ElementPlus, { size: "small" });
 app.mount("#app");
